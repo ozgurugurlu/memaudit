@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use memaudit, please cite the paper (preferred citation) or this software."
+type: software
+title: "memaudit: Offline CPU memory benchmark measurement"
+version: 0.1.0
+authors:
+  - family-names: "Uğurlu"
+    given-names: "Özgür"
+    email: "ugurlu.oozgur@gmail.com"
+license: Apache-2.0
+repository-code: "https://github.com/ozgurugurlu/memaudit"
+date-released: "2026-10-12"
+abstract: >-
+  Local CPU tools for question-blind evidence audits, wrong-question retrieval
+  against uniform, turn-weighted and matched-placebo nulls, deterministic
+  forgetting-policy controls, and numeric replica replay. Benchmark data,
+  historical model outputs, and live provider clients are not included.
+keywords:
+  - memory evaluation
+  - benchmark audit
+  - query independence
+  - replica controls
+  - reproducibility
+preferred-citation:
+  type: report
+  title: "Auditing Agent-Memory Benchmarks: Question-Blind Cues, Fair Nulls, and Replica Controls"
+  authors:
+    - family-names: "Uğurlu"
+      given-names: "Özgür"
+  year: 2026
+  url: "https://github.com/ozgurugurlu/memaudit/blob/main/paper/memaudit-paper.pdf"

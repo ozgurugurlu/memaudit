@@ -1,0 +1,8 @@
+# added release documents and Makefile.
+include README.md CHANGELOG.md CITATION.cff LICENSE NOTICE PROVENANCE.md
+include LICENSING.md DATASHEET.md Makefile
+recursive-include docs *.md
+recursive-include tests *.py
+recursive-include examples *.py
+recursive-include scripts *.py *.sh
+include .github/workflows/ci.yml

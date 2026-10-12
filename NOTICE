@@ -1,0 +1,10 @@
+memaudit 0.1.0
+Copyright 2026 Özgür Uğurlu
+
+Licensed under the Apache License, Version 2.0. See LICENSE.
+
+Third-party dependencies retain their own licences and notices. Dependency
+code, wheels, model files, benchmark data, and raw model outputs are not
+vendored. The ForgetEval integration executes three reviewed, hash-pinned
+source files from the user's own Lethe checkout; those files are not included.
+See docs/third-party-inventory.md and LICENSING.md for details.

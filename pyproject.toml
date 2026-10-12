@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "memaudit"
+version = "0.1.0"
+description = "Offline query-blind memory benchmark audits, wrong-question retrieval nulls, null policies, and replica estimators"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{name = "Özgür Uğurlu", email = "ugurlu.oozgur@gmail.com"}]
+classifiers = ["Private :: Do Not Upload", "Programming Language :: Python :: 3.12"]
+dependencies = ["numpy>=1.26", "scipy>=1.12", "scikit-learn>=1.4", "threadpoolctl>=3.2", "py-rust-stemmers>=0.1"]
+
+[project.urls]
+Repository = "https://github.com/ozgurugurlu/memaudit"
+
+[project.optional-dependencies]
+parquet = ["pyarrow>=15"]
+tokenizer = ["snowballstemmer>=3"]
+hybrid = ["fastembed>=0.8.1,<0.9"]
+test = ["pytest>=8", "build>=1.2"]
+
+[project.scripts]
+memaudit = "memaudit.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+memaudit = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
