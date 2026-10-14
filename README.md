@@ -36,10 +36,12 @@ From the accompanying paper ([PDF](paper/memaudit-paper.pdf), [Markdown](paper/p
   question beats budget-matched two-session retrieval pointers by 13–21 LLM-judged accuracy points for four readers from
   four vendors (preregistered, on a reused test split). This is the value of exact retrieval, not a cue-specific effect,
   and those retrieval pointers trail a pointer-free instruction that reveals what the rubric rewards.
-- **Native reliance is not shown.** Removing typography and clock times together left one reader's accuracy within
-  ±5 points in a non-official layout; replacing STALE's distractors lowered retrieval recall by 12.6 points but also
-  added harder negatives; and both end-to-end tests (retrieval-augmented generation and mem0) are invalid because judge
-  failures left one primary cell of each below the 98% completeness bar.
+- **Native reliance is not shown; a RAG pipeline scores equivalently with and without the cues.** In STALE's official layout,
+  removing typography and clock times together left a hybrid RAG pipeline's LLM-judged accuracy equivalent within ±3
+  points (+0.15 [−1.29, +1.60], Holm-adjusted; preregistered, on a reused population). A mem0 pipeline's test was
+  inconclusive (+4.30 [−0.21, +8.89]). Earlier, one reader stayed within ±5 points in a non-official layout, and
+  replacing STALE's distractors lowered retrieval recall but also added harder negatives; the earlier end-to-end
+  inflation tests are invalid.
 - **Item-level labels are unstable.** Two rebuilds of one memory pipeline disagree on 16% of LLM-judged labels on average,
   while run-level accuracy varies by about 1 point, as averaging over the questions predicts.
 - **Scoring rules matter.** ForgetEval's public score can reward a policy that wipes memory.

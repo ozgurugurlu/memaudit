@@ -2,7 +2,7 @@
 
 Özgür Uğurlu
 
-Companion to [the main paper](paper.md). This appendix is a reduced version of the research archive. It keeps the methods, aggregate results, exposure history, and inferential limits, and it omits cost logs, private source registers, internal working notes, and the full audit memos. Study labels (S1–S19b) and appendix section numbers are kept for cross-reference; Table I.1 maps every study to its main-text and appendix sections.
+Companion to [the main paper](paper.md). This appendix is a reduced version of the research archive. It keeps the methods, aggregate results, exposure history, and inferential limits, and it omits cost logs, private source registers, internal working notes, and the full audit memos. Study labels (S1–S20) and appendix section numbers are kept for cross-reference; Table I.1 maps every study to its main-text and appendix sections.
 
 **Roadmap.** Each appendix supports the following parts of the main text.
 
@@ -16,6 +16,7 @@ Companion to [the main paper](paper.md). This appendix is a reduced version of t
 - Appendix H: post hoc checks, provenance, and release boundaries (§9 and the release statement).
 - Appendix I: the study map, the judge-validation gates, and the computational checks (§3.1, §3.5, and §7.3).
 - Appendix K: implementation details, that is, data, retrieval, prompts, and models (§3.2–§3.5).
+- Appendix L: the pipeline de-cue study of §6.4 (S20).
 
 **The author.** The paper has a single author. In this appendix, “the author” always means that person, who was also the only human grader (Appendix J). All other answer grades come from LLM judges, adjudicators, and regraders, each named by its model.
 
@@ -1467,6 +1468,7 @@ This appendix holds the protocol, amendment, exposure, gate, and recomputation d
 | S15b, S15c | S15b stopped at its budget-forecast rule (S15-K5) before any planned end-to-end call. In the separately registered S15c, both end-to-end tests (S15c-B1 and S15c-B2) are final INVALID under the completeness rule (S15c-K1), and a required auxiliary judge-agreement check is incomplete (its test part UNPERFORMED) | §6.3 | D.4–D.6, H.2 |
 | S16 | Atlas wrong-question retrieval with fair-null baselines | §3.3, §4.2 | E |
 | S18 | Joint de-cue of STALE typography and clock time | §6.2 | B.3 |
+| S20 | The same joint de-cue for a RAG pipeline (S20-B1, EQUIVALENT) and a mem0 2.2.1 pipeline (S20-B2, INCONCLUSIVE) in the official STALE layout | §6.4 | L |
 | S11 | Replicas of one bespoke memory pipeline | §3.5, §7.1 | C.1, J.4 |
 | S11b | Replica follow-up with crossed extractor and judge model families (stopped at its development gate) | §7.2 | C.2 |
 | S11c | Replica follow-up with two extractor model families (UNRESOLVED) | §7.2 | C.2 |
@@ -2135,6 +2137,90 @@ A reply is valid only if it is a JSON object whose only key holds a list of stri
 - *Search.* Search is mem0’s language-model-free semantic search with the probe as query, 10 results, mem0’s default similarity threshold of .1, and no reranker. The entity-boost and keyword-score stages were off, because spaCy and mem0’s BM25 encoder were not installed. Memory ids are derived by hash, and exact score ties are broken by memory hash and id over all stored points, so results do not depend on insertion or thread order.
 - *Reader input.* The retrieved memories fill the history slot of the shared layout (K.5) as lines `- [<YYYY-MM-DD>] <memory>`, ordered by source-session date with ties in mem0’s rank, or `(no memories)` when none is returned. The dates come from the adapter’s metadata, not from mem0.
 - *Amendment M.* A budget-exhausted empty attempt is an empty, non-JSON, unparsable, or wrongly shaped reply that stopped for length or used its full cap. After one at 16,384 tokens, the next extraction attempt runs at 32,768 tokens with a 600-second timeout, and a second such reply at 32,768 tokens ends the call and fails the add. The binding judge escalates from 12,000 to 24,000 tokens in the same way, one attempt earlier than the older remedy, and readers keep their 32,768-token cap without escalation (Appendix D.5.1).
+
+<a id="appendix-l"></a>
+
+## L. S20: two pipelines on STALE with and without its cues
+
+S20, the pipeline de-cue study of §6.4, removes STALE’s typographic and clock-time cues jointly, as the de-cue test (Appendix B.3) did, for a RAG test (B1) and a mem0 test (B2) in the official STALE evaluation layout. It reuses the end-to-end successor study’s retrieval, inference rules, and mem0 adapter (Appendices D.5 and K.8) but is not its successor, because it estimates a different contrast.
+
+### L.1. Protocol card
+
+**Card L. S20 protocol card.** Condensed from the preregistration and its binding protocol amendment (registered as an annex). F1 is the typographic normalizer of Appendix K.5.
+
+| Protocol element | Registered definition |
+|----|----|
+| Registration | Hash-locked with the pre-freeze decisions, preflight, sizing, and code on 2026-10-13 (07:29 UTC), before any study call, with this paper’s earlier results known |
+| Population | 398 of STALE’s 400 scenarios, all used by earlier studies; nested hash-ordered subsets of 150 (B2) and 100 (no-history control) |
+| RAW and DECUE | RAW: the official layout as distributed, byte-identical to STALE’s own rendering, with `YYYY-MM-DD HH:MM` stamps. DECUE: F1 on every turn and probe, and date-only stamps; all else identical |
+| B1 (RAG) | BM25 and bge-small-en-v1.5 fused by RRF over the condition’s user turns, queried with its probe; the reader sees the top five sessions with both roles |
+| B2 (mem0) | The mem0 2.2.1 library, memory decisions unmodified: one store per scenario and condition, one add per session with its user turns (option O1) and stamp, and up to 10 memories per probe, shown as `- [stamp] text` |
+| Models | GLM-5.3-Flash at temperature 0 as extractor (mem0’s own prompts), reader (three reads per probe and condition), and judge (official STALE prompts); distinct request bodies avoid proxy copies (Appendix K.7) |
+| Inference | Holm over B1 and B2 ($\alpha$ = .025, then .05); interval: the wider of a scenario bootstrap and a t interval at the Holm level; t-based TOST |
+| Tiers (first that holds) | POSITIVE: adjusted lower bound \> 0 and estimate ≥ 5. SMALL: lower bound \> 0. EQUIVALENT: Holm-adjusted TOST p ≤ .05. REVERSED: upper bound \< 0. BELOW-SESOI: upper bound \< 5. INCONCLUSIVE: otherwise |
+| Validity | INVALID: leakage, a failed render audit or replay, under 98% complete RAW–DECUE read pairs, or a failed gate. FAILED PIPELINE: pooled accuracy less than 10 points above the no-history control |
+| Validation | 60 verdicts over four system × condition strata, rated blind by a fresh Claude Opus 5.5 instance (`claude-opus-5-5`) that saw only the packet; PASS: agreement ≥ .80 and κ ≥ .70 |
+
+### L.2. Preflight, sizing, and pre-freeze decisions
+
+**Table L2.1. Preflight and sizing.** Outcome-free measurements before the freeze. User-only ingestion (option O1) was open only if the smallest design, L4 (150 B2 scenarios, no full-context arm), exceeded 24 h.
+
+| Item | Measurement or decision |
+|----|----|
+| Throughput | By the author’s decision (D-P1), one step at 50 requests in flight instead of five steps from 8 to 64: $T^*$ = 1,660.9 output tokens/s. The median per-request rate, 35.1 tokens/s, was below the 50 tokens/s that the gate needs to raise its limit, so about $T^*/50 \approx 33$ requests in flight were expected |
+| Expected hours for L4, both roles / user turns | 32.0 / 21.0 (the both-role pilot passed) |
+| Decision | L4 with O1; 28,552 planned calls; attempt cap 40,000 (factor 1.40 instead of 1.2, D-P10) |
+
+Decision D-P2 keeps a rebuilt mem0 store with up to two failed adds (inherited: one); if failures are independent at a 0.75% per-add rate, this cuts the chance that the rule alone invalidates B2 from .74 to .003. By the author’s decision (D-P8), the preflight ran without repeating the registered review of its changed live-call code; a pre-freeze review replaced it (fixes D-P9 and D-P11).
+
+### L.3. Execution, deviations, and exposure
+
+The run was interrupted by a machine restart and resumed from saved state under the registered resume rules. It used 31,654 live GLM-5.3-Flash attempts (cap 40,000; 0 USD), with no budget stop, at a time-averaged gate limit of 32.0 requests in flight. All 300 stores, 10,164 reads, and 3,388 judge calls ended final; 11 judge calls exhausted their budgets, 19 stores were rebuilt once, one kept a failed add, and none was INVALID.
+
+One post-lock software repair under the registered repair rule (A4), one of two allowed repair cycles, let the validation-packet checker’s study-label scan accept the gold-field names inside the required official explanation; packet bytes and sample, every other ban, and every registered text, rule, population, prompt, and frozen list were unchanged.
+
+Before the registered gate ran, the author authorized a nonregistered provisional analysis with a different LLM rater; no number from it enters this paper. The registered rater received only the unchanged packet, and the registered closing steps then ran unchanged.
+
+### L.4. Results
+
+**Table L4.1. Completeness and pipeline check.** Planned pairs are scenarios × 3 probes × 3 reads; every missing read belongs to a judge call that exhausted its budget. Pooled accuracy is on the no-history control’s 100 scenarios, where the control scores 6.3%.
+
+| Test | Planned pairs | Complete pairs (%) | Missing reads, RAW / DECUE | Pooled accuracy, % (margin) | State |
+|----|---:|---:|----|----|----|
+| B1 | 3,582 | 3,564 (99.50) | 15 / 6 | 60.4 (+54.1) | COMPLETE |
+| B2 | 1,350 | 1,338 (99.11) | 3 / 9 | 48.2 (+41.9) | COMPLETE |
+
+**Validation gate: PASS.** The judge agreed with the fresh Claude Opus 5.5 instance on 53 of 60 items (agreement .883, κ .769 = 10/13), none ambiguous. HH:MM strings appeared in none, four, one, and one of the 15 answers in the RAG RAW, RAG DECUE, mem0 RAW, and mem0 DECUE strata.
+
+**Table L4.2. Primary family.** $\Delta$ = RAW − DECUE in points. B2, with the smaller one-sided p, was tested first at $\alpha$ = .025 and not rejected, so B1 kept that level (97.5% intervals).
+
+| Test | $\Delta$ (exact) | Holm-adjusted interval | One-sided superiority p (Holm-adjusted) | Holm-adjusted TOST p (margin) | Tier |
+|----|---:|----|---:|---:|----|
+| B1 | +0.15 (275/1,791) | \[−1.29, +1.60\] | .406 (.406) | $1.2 \times 10^{-5}$ (±3) | EQUIVALENT |
+| B2 | +4.30 (116/27) | \[−0.21, +8.89\] | .016 (.033) | .362 (±5) | INCONCLUSIVE |
+
+B2’s Holm-adjusted superiority p is below .05, but the registered rule rejects only if the Holm-level interval’s lower bound, here −0.21 from the t interval, is above 0; its upper bound, 8.89, rules out BELOW-SESOI.
+
+**Table L4.3. Registered secondary and descriptive rows.** None changes a tier. Brackets are 95% scenario-cluster intervals. No read exhausted its content attempts.
+
+| Row | B1 (RAG) | B2 (mem0) |
+|----|----|----|
+| Accuracy, RAW / DECUE (%) | 59.9 \[57.1, 62.7\] / 59.7 \[56.8, 62.6\] | 49.7 \[44.6, 54.8\] / 45.4 \[40.1, 50.7\] |
+| TOST p at ±3 (Holm-adjusted); exact McNemar test on read 1 | Primary (Table L4.2); 79 / 79 discordant, p = 1.000 | .742; 49 / 37 discordant, p = .235 |
+| $\Delta$ on probes with all pairs complete; after dropping probes with a recovered unit | +0.20 \[−1.08, +1.50\]; +1.04 \[−0.43, +2.52\] (217 scenarios) | +4.38 \[+0.38, +8.39\]; −3.70 \[−19.64, +12.23\] (3 scenarios) |
+| Diagnostics | Retrieval RAW − DECUE: all-gold@5 −0.17, any-gold@5 −0.08 points | 287.3 / 288.9 memories per store (RAW / DECUE), 6.3% of each with a typographic mark |
+
+Exploratory strata without multiplicity correction (exposure group, probe type, scenario type, edit count, and RAW probe typography) all have 95% intervals that include 0; the subsets whose evidence pair differs in clock time (five and two scenarios) are below the 10-scenario minimum.
+
+**Recomputations.** Two fresh-process recomputations from the saved outputs, by the study’s own registered replay code, reproduced the results file and tables byte for byte, and the post-run verification passed. A separate recomputation with separate code, from copies of the saved reads and judgments, reproduced both estimates, intervals, and tiers.
+
+### L.5. Limits
+
+- Reused scenarios, designed with this paper’s earlier results known; GLM-5.3-Flash judges its own answers, and one LLM adjudicator, not humans, validated the judge.
+- Both cues are removed together, with the marks on 14.2% of distractor sessions; turn-count, length, and content cues remain, and clock time is also legitimate temporal content.
+- B2 ingested user turns only, and its interval allows a benefit of up to about 9 points; missing pairs are not shown to be missing at random.
+- The validation packet shows answers typographically normalized, so the gate cannot detect a judge response to marks that RAW answers may copy.
+- No claim follows for other readers, systems, mem0 versions, benchmarks, or published scores.
 
 # References
 
