@@ -1,70 +1,9 @@
-\begin{thebibliography}{106}
+\begin{thebibliography}{35}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
-
-\bibitem[{Anthropic}(2026{\natexlab{a}})]{AnthropicOpus55Announcement}
-{Anthropic}.
-\newblock {Introducing Claude Opus 5.5}.
-\newblock Model announcement, 2026{\natexlab{a}}.
-\newblock URL \url{https://www.anthropic.com/claude-opus-5-5}.
-\newblock Accessed 2026-10-04.
-
-\bibitem[{Anthropic}(2026{\natexlab{b}})]{AnthropicSonnet55Announcement}
-{Anthropic}.
-\newblock {Introducing Claude Sonnet 5.5}.
-\newblock Model announcement, 2026{\natexlab{b}}.
-\newblock URL \url{https://www.anthropic.com/claude-sonnet-5-5}.
-\newblock Accessed 2026-10-04.
-
-\bibitem[Awuni et~al.(2026)Awuni, Achenie, Partey, Owusu, and Sowah]{Awuni2026WhoJudges}
-David~Ababio Awuni, Luke E.~K. Achenie, Benjamin~Tei Partey, Elvis~Gyasi Owusu, and Nii-Nai~Derrick Sowah.
-\newblock {Who Judges Matters: Measuring Family-Conditioned Preference in LLM-as-Judge Panels}, 2026.
-\newblock URL \url{https://arxiv.org/abs/2609.17857v1}.
-
-\bibitem[Bavaresco et~al.(2025)Bavaresco, Bernardi, Bertolazzi, Elliott, Fernández, Gatt, Ghaleb, Giulianelli, Hanna, Koller, Martins, Mondorf, Neplenbroek, Pezzelle, Plank, Schlangen, Suglia, Surikuchi, Takmaz, and Testoni]{Bavaresco2025HumanJudges}
-Anna Bavaresco, Raffaella Bernardi, Leonardo Bertolazzi, Desmond Elliott, Raquel Fernández, Albert Gatt, Esam Ghaleb, Mario Giulianelli, Michael Hanna, Alexander Koller, André F.~T. Martins, Philipp Mondorf, Vera Neplenbroek, Sandro Pezzelle, Barbara Plank, David Schlangen, Alessandro Suglia, Aditya~K Surikuchi, Ece Takmaz, and Alberto Testoni.
-\newblock {LLMs instead of Human Judges? A Large Scale Empirical Study across 20 NLP Evaluation Tasks}.
-\newblock In \emph{Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)}, pages 238--255. Association for Computational Linguistics, 2025.
-\newblock \doi{10.18653/v1/2025.acl-short.20}.
-\newblock URL \url{https://aclanthology.org/2025.acl-short.20/}.
-
-\bibitem[Behnam and Wang(2026)]{BehnamWang2026CausalMemory}
-Arman Behnam and Binghui Wang.
-\newblock {Causal Memory Policy: Making Memory Utility Identifiable by Intervening on Retrieval}, 2026.
-\newblock URL \url{https://arxiv.org/abs/2610.02070v3}.
-
-\bibitem[Behnam et~al.(2026)Behnam, Kim, Yu, Huang, and Yang]{Behnam2026RealCompanion}
-Arman Behnam, Sunglyoung Kim, Jiayi Yu, Eric Huang, and Liangwei Yang.
-\newblock {RealCompanion: Benchmarking Human Understanding from Reasoning over Longitudinal Real-World Conversations}, 2026.
-\newblock URL \url{https://arxiv.org/abs/2610.01780v3}.
-
-\bibitem[Bouthillier et~al.(2021)Bouthillier, Delaunay, Bronzi, Trofimov, Nichyporuk, Szeto, Mohammadi~Sepahvand, Raff, Madan, Voleti, Ebrahimi~Kahou, Michalski, Arbel, Pal, Varoquaux, and Vincent]{Bouthillier2021Variance}
-Xavier Bouthillier, Pierre Delaunay, Mirko Bronzi, Assya Trofimov, Brennan Nichyporuk, Justin Szeto, Nazanin Mohammadi~Sepahvand, Edward Raff, Kanika Madan, Vikram Voleti, Samira Ebrahimi~Kahou, Vincent Michalski, Tal Arbel, Chris Pal, Gaël Varoquaux, and Pascal Vincent.
-\newblock {Accounting for Variance in Machine Learning Benchmarks}.
-\newblock In \emph{Proceedings of Machine Learning and Systems}, volume~3, pages 747--769, 2021.
-\newblock URL \url{https://proceedings.mlsys.org/paper_files/paper/2021/hash/0184b0cd3cfb185989f858a1d9f5c1eb-Abstract.html}.
-
-\bibitem[Bowman and Dahl(2021)]{BowmanDahl2021Fix}
-Samuel~R. Bowman and George~E. Dahl.
-\newblock {What Will it Take to Fix Benchmarking in Natural Language Understanding?}
-\newblock In \emph{Proceedings of NAACL-HLT 2021}, pages 4843--4855. Association for Computational Linguistics, 2021.
-\newblock \doi{10.18653/v1/2021.naacl-main.385}.
-\newblock URL \url{https://aclanthology.org/2021.naacl-main.385/}.
-
-\bibitem[Brown et~al.(2024)Brown, Juravsky, Ehrlich, Clark, Le, Ré, and Mirhoseini]{Brown2024Monkeys}
-Bradley Brown, Jordan Juravsky, Ryan Ehrlich, Ronald Clark, Quoc~V. Le, Christopher Ré, and Azalia Mirhoseini.
-\newblock {Large Language Monkeys: Scaling Inference Compute with Repeated Sampling}, 2024.
-\newblock URL \url{https://arxiv.org/abs/2407.21787}.
-
-\bibitem[Card et~al.(2020)Card, Henderson, Khandelwal, Jia, Mahowald, and Jurafsky]{Card2020Power}
-Dallas Card, Peter Henderson, Urvashi Khandelwal, Robin Jia, Kyle Mahowald, and Dan Jurafsky.
-\newblock {With Little Power Comes Great Responsibility}.
-\newblock In \emph{Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)}, pages 9263--9274. Association for Computational Linguistics, 2020.
-\newblock \doi{10.18653/v1/2020.emnlp-main.745}.
-\newblock URL \url{https://aclanthology.org/2020.emnlp-main.745/}.
 
 \bibitem[Chao et~al.(2026)Chao, Bai, Sheng, Li, and Sun]{Chao2026STALE}
 Hanxiang Chao, Yihan Bai, Rui Sheng, Tianle Li, and Yushi Sun.
@@ -81,52 +20,12 @@ Mark Chen, Jerry Tworek, Heewoo Jun, Qiming Yuan, Henrique {Ponde de Oliveira Pi
 \newblock {Evaluating Large Language Models Trained on Code}, 2021.
 \newblock URL \url{https://arxiv.org/abs/2107.03374}.
 
-\bibitem[Chen(2026)]{Chen2026RoutingOracle}
-Teng-Ruei Chen.
-\newblock {What Does a Routing Oracle Measure Under Stochastic Decoding? Coupling, Scorer Choice, and Single-Commit Ceilings}, 2026.
-\newblock URL \url{https://arxiv.org/abs/2607.03436v3}.
-
 \bibitem[Chhikara et~al.(2025)Chhikara, Khant, Aryan, Singh, and Yadav]{Chhikara2025Mem0}
 Prateek Chhikara, Dev Khant, Saket Aryan, Taranjeet Singh, and Deshraj Yadav.
 \newblock {Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory}.
 \newblock In \emph{ECAI 2025: 28th European Conference on Artificial Intelligence}, volume 413 of \emph{{Frontiers in Artificial Intelligence and Applications}}, pages 2993--3000. IOS Press, 2025.
 \newblock \doi{10.3233/FAIA251160}.
 \newblock URL \url{https://arxiv.org/abs/2504.19413v1}.
-
-\bibitem[Cohen(1960)]{Cohen1960Kappa}
-Jacob Cohen.
-\newblock {A Coefficient of Agreement for Nominal Scales}.
-\newblock \emph{Educational and Psychological Measurement}, 20\penalty0 (1):\penalty0 37--46, 1960.
-\newblock \doi{10.1177/001316446002000104}.
-\newblock URL \url{https://doi.org/10.1177/001316446002000104}.
-
-\bibitem[Cormack et~al.(2009)Cormack, Clarke, and Büttcher]{Cormack2009RRF}
-Gordon~V. Cormack, Charles L.~A. Clarke, and Stefan Büttcher.
-\newblock {Reciprocal Rank Fusion Outperforms Condorcet and Individual Rank Learning Methods}.
-\newblock In \emph{Proceedings of the 32nd International ACM SIGIR Conference on Research and Development in Information Retrieval}, SIGIR '09, pages 758--759. Association for Computing Machinery, 2009.
-\newblock \doi{10.1145/1571941.1572114}.
-\newblock URL \url{https://doi.org/10.1145/1571941.1572114}.
-
-\bibitem[Craswell et~al.(2005)Craswell, Robertson, Zaragoza, and Taylor]{Craswell2005QueryIndependent}
-Nick Craswell, Stephen Robertson, Hugo Zaragoza, and Michael Taylor.
-\newblock {Relevance Weighting for Query Independent Evidence}.
-\newblock In \emph{Proceedings of the 28th Annual International ACM SIGIR Conference on Research and Development in Information Retrieval}, pages 416--423. Association for Computing Machinery, 2005.
-\newblock \doi{10.1145/1076034.1076106}.
-\newblock URL \url{https://doi.org/10.1145/1076034.1076106}.
-
-\bibitem[Dai et~al.(2024{\natexlab{a}})Dai, Liu, Zhou, Pang, Ruan, Wang, Dong, Xu, and Wen]{Dai2024Cocktail}
-Sunhao Dai, Weihao Liu, Yuqi Zhou, Liang Pang, Rongju Ruan, Gang Wang, Zhenhua Dong, Jun Xu, and Ji-Rong Wen.
-\newblock {Cocktail: A Comprehensive Information Retrieval Benchmark with LLM-Generated Documents Integration}.
-\newblock In \emph{Findings of the Association for Computational Linguistics: ACL 2024}, pages 7052--7074. Association for Computational Linguistics, 2024{\natexlab{a}}.
-\newblock \doi{10.18653/v1/2024.findings-acl.421}.
-\newblock URL \url{https://aclanthology.org/2024.findings-acl.421/}.
-
-\bibitem[Dai et~al.(2024{\natexlab{b}})Dai, Zhou, Pang, Liu, Hu, Liu, Zhang, Wang, and Xu]{Dai2024SourceBias}
-Sunhao Dai, Yuqi Zhou, Liang Pang, Weihao Liu, Xiaolin Hu, Yong Liu, Xiao Zhang, Gang Wang, and Jun Xu.
-\newblock {Neural Retrievers Are Biased Towards LLM-Generated Content}.
-\newblock In \emph{Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining}, pages 526--537. Association for Computing Machinery, 2024{\natexlab{b}}.
-\newblock \doi{10.1145/3637528.3671882}.
-\newblock URL \url{https://arxiv.org/abs/2310.20501v3}.
 
 \bibitem[D'Amour et~al.(2022)D'Amour, Heller, Moldovan, Adlam, Alipanahi, Beutel, Chen, Deaton, Eisenstein, Hoffman, Hormozdiari, Houlsby, Hou, Jerfel, Karthikesalingam, Lucic, Ma, McLean, Mincu, Mitani, Montanari, Nado, Natarajan, Nielson, Osborne, Raman, Ramasamy, Sayres, Schrouff, Seneviratne, Sequeira, Suresh, Veitch, Vladymyrov, Wang, Webster, Yadlowsky, Yun, Zhai, and Sculley]{DAmour2022Underspecification}
 Alexander D'Amour, Katherine Heller, Dan Moldovan, Ben Adlam, Babak Alipanahi, Alex Beutel, Christina Chen, Jonathan Deaton, Jacob Eisenstein, Matthew~D. Hoffman, Farhad Hormozdiari, Neil Houlsby, Shaobo Hou, Ghassen Jerfel, Alan Karthikesalingam, Mario Lucic, Yian Ma, Cory McLean, Diana Mincu, Akinori Mitani, Andrea Montanari, Zachary Nado, Vivek Natarajan, Christopher Nielson, Thomas~F. Osborne, Rajiv Raman, Kim Ramasamy, Rory Sayres, Jessica Schrouff, Martin Seneviratne, Shannon Sequeira, Harini Suresh, Victor Veitch, Max Vladymyrov, Xuezhi Wang, Kellie Webster, Steve Yadlowsky, Taedong Yun, Xiaohua Zhai, and D.~Sculley.
@@ -140,18 +39,6 @@ Ning Ding, Yulin Chen, Bokai Xu, Yujia Qin, Shengding Hu, Zhiyuan Liu, Maosong S
 \newblock In \emph{Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing}, pages 3029--3051. Association for Computational Linguistics, 2023.
 \newblock \doi{10.18653/v1/2023.emnlp-main.183}.
 \newblock URL \url{https://aclanthology.org/2023.emnlp-main.183/}.
-
-\bibitem[Du(2026)]{Du2026PairID}
-Wenzhang Du.
-\newblock {What Would Fix This RAG Failure? Auditing Counterfactual Response with Paired Evidence Interventions}, 2026.
-\newblock URL \url{https://arxiv.org/abs/2608.08944v1}.
-
-\bibitem[Dwork et~al.(2015)Dwork, Feldman, Hardt, Pitassi, Reingold, and Roth]{Dwork2015Holdout}
-Cynthia Dwork, Vitaly Feldman, Moritz Hardt, Toniann Pitassi, Omer Reingold, and Aaron Roth.
-\newblock {The reusable holdout: Preserving validity in adaptive data analysis}.
-\newblock \emph{Science}, 349\penalty0 (6248):\penalty0 636--638, 2015.
-\newblock \doi{10.1126/science.aaa9375}.
-\newblock URL \url{https://doi.org/10.1126/science.aaa9375}.
 
 \bibitem[Feng et~al.(2019)Feng, Wallace, and Boyd-Graber]{Feng2019Misleading}
 Shi Feng, Eric Wallace, and Jordan Boyd-Graber.
@@ -167,13 +54,6 @@ Matt Gardner, Yoav Artzi, Victoria Basmov, Jonathan Berant, Ben Bogin, Sihao Che
 \newblock \doi{10.18653/v1/2020.findings-emnlp.117}.
 \newblock URL \url{https://aclanthology.org/2020.findings-emnlp.117/}.
 
-\bibitem[Gardner et~al.(2021)Gardner, Merrill, Dodge, Peters, Ross, Singh, and Smith]{Gardner2021Competency}
-Matt Gardner, William Merrill, Jesse Dodge, Matthew~E. Peters, Alexis Ross, Sameer Singh, and Noah~A. Smith.
-\newblock {Competency Problems: On Finding and Removing Artifacts in Language Data}.
-\newblock In \emph{Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing}, pages 1801--1813. Association for Computational Linguistics, 2021.
-\newblock \doi{10.18653/v1/2021.emnlp-main.135}.
-\newblock URL \url{https://aclanthology.org/2021.emnlp-main.135/}.
-
 \bibitem[Ge et~al.(2024)Ge, Chan, Wang, Yu, Mi, and Yu]{Ge2024PersonaHub}
 Tao Ge, Xin Chan, Xiaoyang Wang, Dian Yu, Haitao Mi, and Dong Yu.
 \newblock {Scaling Synthetic Data Creation with 1,000,000,000 Personas}, 2024.
@@ -186,24 +66,6 @@ Robert Geirhos, J{\"o}rn-Henrik Jacobsen, Claudio Michaelis, Richard Zemel, Wiel
 \newblock \doi{10.1038/s42256-020-00257-z}.
 \newblock URL \url{https://www.nature.com/articles/s42256-020-00257-z}.
 
-\bibitem[{Google}(2026)]{Google2026Gemini38FlashAPI}
-{Google}.
-\newblock {Gemini API documentation: Gemini 3.8 Flash model page}, 2026.
-\newblock URL \url{https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash}.
-\newblock Accessed 2026-10-06.
-
-\bibitem[{Google DeepMind}(2026{\natexlab{a}})]{Google2026Gemini35FlashLite}
-{Google DeepMind}.
-\newblock {Gemini 3.5 Flash-Lite model card}, 2026{\natexlab{a}}.
-\newblock URL \url{https://deepmind.google/models/model-cards/gemini-3-5-flash-lite/}.
-\newblock Accessed 2026-10-04.
-
-\bibitem[{Google DeepMind}(2026{\natexlab{b}})]{Google2026Gemini38Flash}
-{Google DeepMind}.
-\newblock {Gemini 3.8 Flash model card}, 2026{\natexlab{b}}.
-\newblock URL \url{https://deepmind.google/models/model-cards/gemini-3-8-flash/}.
-\newblock Accessed 2026-10-04.
-
 \bibitem[Gururangan et~al.(2018)Gururangan, Swayamdipta, Levy, Schwartz, Bowman, and Smith]{Gururangan2018AnnotationArtifacts}
 Suchin Gururangan, Swabha Swayamdipta, Omer Levy, Roy Schwartz, Samuel~R. Bowman, and Noah~A. Smith.
 \newblock {Annotation Artifacts in Natural Language Inference Data}.
@@ -215,48 +77,6 @@ Suchin Gururangan, Swabha Swayamdipta, Omer Levy, Roy Schwartz, Samuel~R. Bowman
 Xixuan Hao, Zeyu Zhang, Zehao Lin, Yihang Sun, Ziliang Guo, Xichong Zhang, Yuxuan Liang, Feiyu Xiong, and Zhiyu Li.
 \newblock {MemOps: Benchmarking Lifecycle Memory Operations in Long-Horizon Conversations}, 2026.
 \newblock URL \url{https://arxiv.org/abs/2607.12893v1}.
-
-\bibitem[Holm(1979)]{Holm1979}
-Sture Holm.
-\newblock {A Simple Sequentially Rejective Multiple Test Procedure}.
-\newblock \emph{Scandinavian Journal of Statistics}, 6\penalty0 (2):\penalty0 65--70, 1979.
-\newblock URL \url{https://www.jstor.org/stable/4615733}.
-
-\bibitem[Horvitz and Thompson(1952)]{HorvitzThompson1952}
-D.~G. Horvitz and D.~J. Thompson.
-\newblock {A Generalization of Sampling Without Replacement from a Finite Universe}.
-\newblock \emph{Journal of the American Statistical Association}, 47\penalty0 (260):\penalty0 663--685, 1952.
-\newblock \doi{10.1080/01621459.1952.10483446}.
-\newblock URL \url{https://doi.org/10.1080/01621459.1952.10483446}.
-
-\bibitem[Hsieh et~al.(2024)Hsieh, Sun, Kriman, Acharya, Rekesh, Jia, Zhang, and Ginsburg]{Hsieh2024RULER}
-Cheng-Ping Hsieh, Simeng Sun, Samuel Kriman, Shantanu Acharya, Dima Rekesh, Fei Jia, Yang Zhang, and Boris Ginsburg.
-\newblock {RULER: What's the Real Context Size of Your Long-Context Language Models?}
-\newblock In \emph{First Conference on Language Modeling}, 2024.
-\newblock URL \url{https://openreview.net/forum?id=kIoBbc76Sy}.
-
-\bibitem[Hu et~al.(2026)Hu, Wang, and McAuley]{Hu2026MemoryAgentBench}
-Yuanzhe Hu, Yu~Wang, and Julian McAuley.
-\newblock {Evaluating Memory in LLM Agents via Incremental Multi-Turn Interactions}.
-\newblock In \emph{International Conference on Learning Representations}, 2026.
-\newblock URL \url{https://arxiv.org/abs/2507.05257v4}.
-
-\bibitem[Huang(2026)]{Huang2026RetentionSelection}
-Juli Huang.
-\newblock {What Should an Agent Remember? Disentangling Retention from Retrieval in Bounded-Memory Evaluation}, 2026.
-\newblock URL \url{https://arxiv.org/abs/2610.00366v1}.
-
-\bibitem[Huang et~al.(2026)Huang, Bi, Cai, Chen, Guo, and Cheng]{Huang2026DataNotModel}
-Wei Huang, Keping Bi, Yinqiong Cai, Wei Chen, Jiafeng Guo, and Xueqi Cheng.
-\newblock {Data, Not Model: Explaining Bias Toward LLM Texts in Neural Retrievers}, 2026.
-\newblock URL \url{https://arxiv.org/abs/2604.06163v1}.
-
-\bibitem[Jacobs and Wallach(2021)]{JacobsWallach2021Measurement}
-Abigail~Z. Jacobs and Hanna Wallach.
-\newblock {Measurement and Fairness}.
-\newblock In \emph{Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency}, pages 375--385. Association for Computing Machinery, 2021.
-\newblock \doi{10.1145/3442188.3445901}.
-\newblock URL \url{https://doi.org/10.1145/3442188.3445901}.
 
 \bibitem[Jiang et~al.(2025)Jiang, Yuan, Shen, Hao, Xu, Chen, Liu, Vijjini, He, Yu, Poovendran, Wornell, Ungar, Roth, Chen, and Taylor]{Jiang2025PersonaMemV2}
 Bowen Jiang, Yuan Yuan, Maohao Shen, Zhuoqun Hao, Zhangchen Xu, Zichen Chen, Ziyi Liu, Anvesh~Rao Vijjini, Jiashu He, Hanchao Yu, Radha Poovendran, Gregory Wornell, Lyle Ungar, Dan Roth, Sihao Chen, and Camillo~Jose Taylor.
@@ -275,20 +95,6 @@ Zhaoyang Jiang, Zhizhong Fu, Zicheng Li, Yunsoo Kim, Jiacong Mi, Xuanqi Peng, Fe
 \newblock {Presentation, Not Mechanism: A Render Confound in Deprecation-Aware Memory Evaluation}, 2026.
 \newblock URL \url{https://arxiv.org/abs/2607.16019v1}.
 
-\bibitem[Jones(2026)]{Jones2026Reproducibility}
-Ross Jones.
-\newblock {Are Agent Memory Benchmarks Reproducible?}
-\newblock Blog post, The Hopium Lab, 2026.
-\newblock URL \url{https://thehopiumlab.com/whiteboard/agent-memory-benchmark-variance}.
-\newblock Accessed 2026-10-04.
-
-\bibitem[Kapoor and Narayanan(2023)]{KapoorNarayanan2023Leakage}
-Sayash Kapoor and Arvind Narayanan.
-\newblock {Leakage and the reproducibility crisis in machine-learning-based science}.
-\newblock \emph{Patterns}, 4\penalty0 (9):\penalty0 100804, 2023.
-\newblock \doi{10.1016/j.patter.2023.100804}.
-\newblock URL \url{https://doi.org/10.1016/j.patter.2023.100804}.
-
 \bibitem[Kaushik and Lipton(2018)]{KaushikLipton2018ReadingComprehension}
 Divyansh Kaushik and Zachary~C. Lipton.
 \newblock {How Much Reading Does Reading Comprehension Require? A Critical Investigation of Popular Benchmarks}.
@@ -302,19 +108,6 @@ Wessel Kraaij, Thijs Westerveld, and Djoerd Hiemstra.
 \newblock In \emph{Proceedings of the 25th Annual International ACM SIGIR Conference on Research and Development in Information Retrieval}, pages 27--34. Association for Computing Machinery, 2002.
 \newblock \doi{10.1145/564376.564383}.
 \newblock URL \url{https://doi.org/10.1145/564376.564383}.
-
-\bibitem[Lakens(2017)]{Lakens2017Equivalence}
-Daniël Lakens.
-\newblock {Equivalence Tests: A Practical Primer for t Tests, Correlations, and Meta-Analyses}.
-\newblock \emph{Social Psychological and Personality Science}, 8\penalty0 (4):\penalty0 355--362, 2017.
-\newblock \doi{10.1177/1948550617697177}.
-\newblock URL \url{https://doi.org/10.1177/1948550617697177}.
-
-\bibitem[Le~Bras et~al.(2020)Le~Bras, Swayamdipta, Bhagavatula, Zellers, Peters, Sabharwal, and Choi]{LeBras2020AFLite}
-Ronan Le~Bras, Swabha Swayamdipta, Chandra Bhagavatula, Rowan Zellers, Matthew~E. Peters, Ashish Sabharwal, and Yejin Choi.
-\newblock {Adversarial Filters of Dataset Biases}.
-\newblock In \emph{Proceedings of the 37th International Conference on Machine Learning}, volume 119 of \emph{{Proceedings of Machine Learning Research}}, pages 1078--1088. PMLR, 2020.
-\newblock URL \url{https://proceedings.mlr.press/v119/bras20a.html}.
 
 \bibitem[Li et~al.(2026)Li, Guo, Zhang, Xu, Huang, Liu, Xu, Xu, and Liu]{Li2026LoCoMoPlus}
 Yifei Li, Weidong Guo, Lingling Zhang, Rongman Xu, Muye Huang, Hui Liu, Lijiao Xu, Yu~Xu, and Jun Liu.
@@ -330,44 +123,12 @@ Nelson~F. Liu, Kevin Lin, John Hewitt, Ashwin Paranjape, Michele Bevilacqua, Fab
 \newblock \doi{10.1162/tacl_a_00638}.
 \newblock URL \url{https://aclanthology.org/2024.tacl-1.9/}.
 
-\bibitem[Liu(2026)]{Liu2026StashMemory}
-Sam Liu.
-\newblock {Why Memory Is Unsolved}.
-\newblock Blog post, Stash, 2026.
-\newblock URL \url{https://www.joinstash.ai/blog/why-memory-is-unsolved}.
-\newblock Accessed 2026-10-04.
-
-\bibitem[Luce(1959)]{Luce1959}
-R.~Duncan Luce.
-\newblock \emph{{Individual Choice Behavior: A Theoretical Analysis}}.
-\newblock Wiley, 1959.
-\newblock URL \url{https://books.google.com/books/about/Individual_Choice_Behavior.html?id=a80DAQAAIAAJ}.
-
-\bibitem[Madaan et~al.(2024)Madaan, Singh, Schaeffer, Poulton, Koyejo, Stenetorp, Narang, and Hupkes]{Madaan2024Variance}
-Lovish Madaan, Aaditya~K. Singh, Rylan Schaeffer, Andrew Poulton, Sanmi Koyejo, Pontus Stenetorp, Sharan Narang, and Dieuwke Hupkes.
-\newblock {Quantifying Variance in Evaluation Benchmarks}, 2024.
-\newblock URL \url{https://arxiv.org/abs/2406.10229v1}.
-
 \bibitem[Maharana et~al.(2024)Maharana, Lee, Tulyakov, Bansal, Barbieri, and Fang]{Maharana2024LoCoMo}
 Adyasha Maharana, Dong-Ho Lee, Sergey Tulyakov, Mohit Bansal, Francesco Barbieri, and Yuwei Fang.
 \newblock {Evaluating Very Long-Term Conversational Memory of LLM Agents}.
 \newblock In \emph{Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)}, pages 13851--13870. Association for Computational Linguistics, 2024.
 \newblock \doi{10.18653/v1/2024.acl-long.747}.
 \newblock URL \url{https://aclanthology.org/2024.acl-long.747/}.
-
-\bibitem[McCoy et~al.(2019)McCoy, Pavlick, and Linzen]{McCoy2019Right}
-R.~Thomas McCoy, Ellie Pavlick, and Tal Linzen.
-\newblock {Right for the Wrong Reasons: Diagnosing Syntactic Heuristics in Natural Language Inference}.
-\newblock In \emph{Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics}, pages 3428--3448. Association for Computational Linguistics, 2019.
-\newblock \doi{10.18653/v1/P19-1334}.
-\newblock URL \url{https://aclanthology.org/P19-1334/}.
-
-\bibitem[McNemar(1947)]{McNemar1947}
-Quinn McNemar.
-\newblock {Note on the Sampling Error of the Difference Between Correlated Proportions or Percentages}.
-\newblock \emph{Psychometrika}, 12\penalty0 (2):\penalty0 153--157, 1947.
-\newblock \doi{10.1007/BF02295996}.
-\newblock URL \url{https://doi.org/10.1007/BF02295996}.
 
 \bibitem[{mem0ai}(2026)]{Mem0Library}
 {mem0ai}.
@@ -376,59 +137,16 @@ Quinn McNemar.
 \newblock URL \url{https://github.com/mem0ai/mem0}.
 \newblock Version 2.2.1, released 2026-09-25 (PyPI package mem0ai).
 
-\bibitem[{Meta}(2026)]{Meta2026MuseSpark13}
-{Meta}.
-\newblock {Introducing Muse Spark 1.3}, 2026.
-\newblock URL \url{https://research.meta.ai/blog/introducing-muse-spark-1-3}.
-\newblock Blog post, 2 September 2026.
-
 \bibitem[Milani~Fard et~al.(2016)Milani~Fard, Cormier, Canini, and Gupta]{MilaniFard2016Churn}
 Mahdi Milani~Fard, Quentin Cormier, Kevin Canini, and Maya Gupta.
 \newblock {Launch and Iterate: Reducing Prediction Churn}.
 \newblock In \emph{Advances in Neural Information Processing Systems}, volume~29. Curran Associates, Inc., 2016.
 \newblock URL \url{https://proceedings.neurips.cc/paper/2016/hash/dc5c768b5dc76a084531934b34601977-Abstract.html}.
 
-\bibitem[Miller(2024)]{Miller2024ErrorBars}
-Evan Miller.
-\newblock {Adding Error Bars to Evals: A Statistical Approach to Language Model Evaluations}, 2024.
-\newblock URL \url{https://arxiv.org/abs/2411.00640v1}.
-
-\bibitem[Modarressi et~al.(2025)Modarressi, Deilamsalehy, Dernoncourt, Bui, Rossi, Yoon, and Schütze]{Modarressi2025NoLiMa}
-Ali Modarressi, Hanieh Deilamsalehy, Franck Dernoncourt, Trung Bui, Ryan~A. Rossi, Seunghyun Yoon, and Hinrich Schütze.
-\newblock {NoLiMa: Long-Context Evaluation Beyond Literal Matching}.
-\newblock In \emph{Proceedings of the 42nd International Conference on Machine Learning}, volume 267, pages 44554--44570. PMLR, 2025.
-\newblock URL \url{https://proceedings.mlr.press/v267/modarressi25a.html}.
-
 \bibitem[Mondal et~al.(2026)Mondal, Apurba, Banik, Mahmud, and Shihab]{Mondal2026BeforeAnswering}
 Joyanta~Jyoti Mondal, Md. Shifatul~Ahsan Apurba, Mridul Banik, Md~Masud~Al Mahmud, and Ibne~Farabi Shihab.
 \newblock {Before Answering: Evidence Sufficiency Under Size-Matched Memory Construction}, 2026.
 \newblock URL \url{https://arxiv.org/abs/2609.32269v1}.
-
-\bibitem[Niven and Kao(2019)]{NivenKao2019Probing}
-Timothy Niven and Hung-Yu Kao.
-\newblock {Probing Neural Network Comprehension of Natural Language Arguments}.
-\newblock In \emph{Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics}, pages 4658--4664. Association for Computational Linguistics, 2019.
-\newblock \doi{10.18653/v1/P19-1459}.
-\newblock URL \url{https://aclanthology.org/P19-1459/}.
-
-\bibitem[Nosek et~al.(2018)Nosek, Ebersole, DeHaven, and Mellor]{Nosek2018Prereg}
-Brian~A. Nosek, Charles~R. Ebersole, Alexander~C. DeHaven, and David~T. Mellor.
-\newblock {The preregistration revolution}.
-\newblock \emph{Proceedings of the National Academy of Sciences}, 115\penalty0 (11):\penalty0 2600--2606, 2018.
-\newblock \doi{10.1073/pnas.1708274114}.
-\newblock URL \url{https://doi.org/10.1073/pnas.1708274114}.
-
-\bibitem[{OpenAI}(2026)]{OpenAIGPT61SolDocs}
-{OpenAI}.
-\newblock {GPT-6.1 Sol}.
-\newblock Model documentation, 2026.
-\newblock URL \url{https://developers.openai.com/api/docs/models/gpt-6.1-sol}.
-\newblock Accessed 2026-10-04.
-
-\bibitem[Packer et~al.(2023)Packer, Wooders, Lin, Fang, Patil, Stoica, and Gonzalez]{Packer2023MemGPT}
-Charles Packer, Sarah Wooders, Kevin Lin, Vivian Fang, Shishir~G. Patil, Ion Stoica, and Joseph~E. Gonzalez.
-\newblock {MemGPT: Towards LLMs as Operating Systems}, 2023.
-\newblock URL \url{https://arxiv.org/abs/2310.08560}.
 
 \bibitem[Panickssery et~al.(2024)Panickssery, Bowman, and Feng]{Panickssery2024SelfPreference}
 Arjun Panickssery, Samuel~R. Bowman, and Shi Feng.
@@ -437,13 +155,6 @@ Arjun Panickssery, Samuel~R. Bowman, and Shi Feng.
 \newblock \doi{10.52202/079017-2197}.
 \newblock URL \url{https://proceedings.neurips.cc/paper_files/paper/2024/hash/7f1f0218e45f5414c79c0679633e47bc-Abstract-Conference.html}.
 
-\bibitem[Plackett(1975)]{Plackett1975}
-R.~L. Plackett.
-\newblock {The Analysis of Permutations}.
-\newblock \emph{Journal of the Royal Statistical Society: Series C (Applied Statistics)}, 24\penalty0 (2):\penalty0 193--202, 1975.
-\newblock \doi{10.2307/2346567}.
-\newblock URL \url{https://doi.org/10.2307/2346567}.
-
 \bibitem[Poliak et~al.(2018)Poliak, Naradowsky, Haldar, Rudinger, and Van~Durme]{Poliak2018HypothesisOnly}
 Adam Poliak, Jason Naradowsky, Aparajita Haldar, Rachel Rudinger, and Benjamin Van~Durme.
 \newblock {Hypothesis Only Baselines in Natural Language Inference}.
@@ -451,60 +162,11 @@ Adam Poliak, Jason Naradowsky, Aparajita Haldar, Rachel Rudinger, and Benjamin V
 \newblock \doi{10.18653/v1/S18-2023}.
 \newblock URL \url{https://aclanthology.org/S18-2023/}.
 
-\bibitem[Pombal et~al.(2026)Pombal, Rei, and Martins]{Pombal2026SelfPreference}
-José Pombal, Ricardo Rei, and André F.~T. Martins.
-\newblock {Self-Preference Bias in Rubric-Based Evaluation of Large Language Models}, 2026.
-\newblock URL \url{https://arxiv.org/abs/2604.06996v3}.
-
-\bibitem[Raji et~al.(2021)Raji, Bender, Paullada, Denton, and Hanna]{Raji2021Everything}
-Inioluwa~Deborah Raji, Emily~M. Bender, Amandalynne Paullada, Emily Denton, and Alex Hanna.
-\newblock {AI and the Everything in the Whole Wide World Benchmark}.
-\newblock In \emph{Proceedings of the Neural Information Processing Systems Track on Datasets and Benchmarks}, volume~1, 2021.
-\newblock URL \url{https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/084b6fbb10729ed4da8c3d3f5a3ae7c9-Abstract-round2.html}.
-
-\bibitem[Rasmussen et~al.(2025)Rasmussen, Paliychuk, Beauvais, Ryan, and Chalef]{Rasmussen2025Zep}
-Preston Rasmussen, Pavlo Paliychuk, Travis Beauvais, Jack Ryan, and Daniel Chalef.
-\newblock {Zep: A Temporal Knowledge Graph Architecture for Agent Memory}, 2025.
-\newblock URL \url{https://arxiv.org/abs/2501.13956}.
-
-\bibitem[Recht et~al.(2019)Recht, Roelofs, Schmidt, and Shankar]{Recht2019ImageNet}
-Benjamin Recht, Rebecca Roelofs, Ludwig Schmidt, and Vaishaal Shankar.
-\newblock {Do ImageNet Classifiers Generalize to ImageNet?}
-\newblock In \emph{Proceedings of the 36th International Conference on Machine Learning}, volume~97, pages 5389--5400. PMLR, 2019.
-\newblock URL \url{https://proceedings.mlr.press/v97/recht19a.html}.
-
-\bibitem[Reuel et~al.(2024)Reuel, Hardy, Smith, Lamparth, Hardy, and Kochenderfer]{Reuel2024BetterBench}
-Anka Reuel, Amelia Hardy, Chandler Smith, Max Lamparth, Malcolm Hardy, and Mykel~J. Kochenderfer.
-\newblock {BetterBench: Assessing AI Benchmarks, Uncovering Issues, and Establishing Best Practices}.
-\newblock In \emph{Advances in Neural Information Processing Systems}, volume~37, pages 21763--21813. Curran Associates, Inc., 2024.
-\newblock \doi{10.52202/079017-0685}.
-\newblock URL \url{https://proceedings.neurips.cc/paper_files/paper/2024/hash/26889e8359e7ef8a7f5d77457364ca55-Abstract-Datasets_and_Benchmarks_Track.html}.
-\newblock Datasets and Benchmarks Track.
-
-\bibitem[Robertson and Zaragoza(2009)]{RobertsonZaragoza2009BM25}
-Stephen Robertson and Hugo Zaragoza.
-\newblock {The Probabilistic Relevance Framework: BM25 and Beyond}.
-\newblock \emph{Foundations and Trends in Information Retrieval}, 3\penalty0 (4):\penalty0 333--389, 2009.
-\newblock \doi{10.1561/1500000019}.
-\newblock URL \url{https://doi.org/10.1561/1500000019}.
-
-\bibitem[Schuirmann(1987)]{Schuirmann1987TOST}
-Donald~J. Schuirmann.
-\newblock {A comparison of the Two One-Sided Tests Procedure and the Power Approach for assessing the equivalence of average bioavailability}.
-\newblock \emph{Journal of Pharmacokinetics and Biopharmaceutics}, 15\penalty0 (6):\penalty0 657--680, 1987.
-\newblock \doi{10.1007/BF01068419}.
-\newblock URL \url{https://doi.org/10.1007/BF01068419}.
-
 \bibitem[Sclar et~al.(2024)Sclar, Choi, Tsvetkov, and Suhr]{Sclar2024Spurious}
 Melanie Sclar, Yejin Choi, Yulia Tsvetkov, and Alane Suhr.
 \newblock {Quantifying Language Models' Sensitivity to Spurious Features in Prompt Design or: How I learned to start worrying about prompt formatting}.
 \newblock In \emph{The Twelfth International Conference on Learning Representations}, 2024.
 \newblock URL \url{https://proceedings.iclr.cc/paper_files/paper/2024/hash/6c0e99d736da621403018ca7b32b1a4d-Abstract-Conference.html}.
-
-\bibitem[Shao et~al.(2026)Shao, Shen, Yin, Li, Wang, Ivison, Poovendran, Lambert, Xiao, Lewis, Yih, Zettlemoyer, and Koh]{Shao2026ContextLanguageModels}
-Rulin Shao, Shannon~Zejiang Shen, Junjie~Oscar Yin, Yuetai Li, Minheng Wang, Hamish Ivison, Radha Poovendran, Nathan Lambert, Teng Xiao, Mike Lewis, Wen-tau Yih, Luke Zettlemoyer, and Pang~Wei Koh.
-\newblock {Context Language Models}, 2026.
-\newblock URL \url{https://arxiv.org/abs/2609.37725v1}.
 
 \bibitem[Sharma and Lall(2026)]{SharmaLall2026Selection}
 Rishabh Sharma and Rishika Lall.
@@ -516,11 +178,6 @@ Freda Shi, Xinyun Chen, Kanishka Misra, Nathan Scales, David Dohan, Ed~H. Chi, N
 \newblock {Large Language Models Can Be Easily Distracted by Irrelevant Context}.
 \newblock In \emph{Proceedings of the 40th International Conference on Machine Learning}, volume 202, pages 31210--31227. PMLR, 2023.
 \newblock URL \url{https://proceedings.mlr.press/v202/shi23a.html}.
-
-\bibitem[Shi(2026)]{Shi2026Madeleine}
-Zhiyun Shi.
-\newblock {Madeleine: Learning Involuntary Recall for Conversational Memory from Simulated Lives}, 2026.
-\newblock URL \url{https://arxiv.org/abs/2610.01118v2}.
 
 \bibitem[Si et~al.(2026)Si, Han, Li, and Zhang]{Si2026Render}
 Yuan Si, Simeng Han, Daming Li, and Jialu Zhang.
@@ -534,13 +191,6 @@ Amit Singhal, Chris Buckley, and Mandar Mitra.
 \newblock \doi{10.1145/243199.243206}.
 \newblock URL \url{https://doi.org/10.1145/243199.243206}.
 
-\bibitem[Song et~al.(2025)Song, Wang, Li, and Lin]{Song2025Greedy}
-Yifan Song, Guoyin Wang, Sujian Li, and Bill~Yuchen Lin.
-\newblock {The Good, The Bad, and The Greedy: Evaluation of LLMs Should Not Ignore Non-Determinism}.
-\newblock In \emph{Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)}, pages 4195--4206. Association for Computational Linguistics, 2025.
-\newblock \doi{10.18653/v1/2025.naacl-long.211}.
-\newblock URL \url{https://aclanthology.org/2025.naacl-long.211/}.
-
 \bibitem[Tavakoli et~al.(2026)Tavakoli, Salemi, Ye, Abdalla, Zamani, and Mitchell]{Tavakoli2025BEAM}
 Mohammad Tavakoli, Alireza Salemi, Carrie Ye, Mohamed Abdalla, Hamed Zamani, and J~Ross Mitchell.
 \newblock {Beyond a Million Tokens: Benchmarking and Enhancing Long-Term Memory in LLMs}.
@@ -553,108 +203,16 @@ Aman~Singh Thakur, Kartik Choudhary, Venkat~Srinik Ramayapally, Sankaran Vaidyan
 \newblock In \emph{Proceedings of the Fourth Workshop on Generation, Evaluation and Metrics (GEM²)}, pages 404--430. Association for Computational Linguistics, 2025.
 \newblock URL \url{https://aclanthology.org/2025.gem-1.33/}.
 
-\bibitem[van Miltenburg et~al.(2021)van Miltenburg, van~der Lee, and Krahmer]{vanMiltenburg2021Prereg}
-Emiel van Miltenburg, Chris van~der Lee, and Emiel Krahmer.
-\newblock {Preregistering NLP research}.
-\newblock In \emph{Proceedings of NAACL-HLT 2021}, pages 613--623. Association for Computational Linguistics, 2021.
-\newblock \doi{10.18653/v1/2021.naacl-main.51}.
-\newblock URL \url{https://aclanthology.org/2021.naacl-main.51/}.
-
-\bibitem[Verga et~al.(2024)Verga, Hofstätter, Althammer, Su, Piktus, Arkhangorodsky, Xu, White, and Lewis]{Verga2024PoLL}
-Pat Verga, Sebastian Hofstätter, Sophia Althammer, Yixuan Su, Aleksandra Piktus, Arkady Arkhangorodsky, Minjie Xu, Naomi White, and Patrick Lewis.
-\newblock {Replacing Judges with Juries: Evaluating LLM Generations with a Panel of Diverse Models}, 2024.
-\newblock URL \url{https://arxiv.org/abs/2404.18796v2}.
-
-\bibitem[Wang et~al.(2024)Wang, Li, Chen, Cai, Zhu, Lin, Cao, Kong, Liu, Liu, and Sui]{Wang2024NotFair}
-Peiyi Wang, Lei Li, Liang Chen, Zefan Cai, Dawei Zhu, Binghuai Lin, Yunbo Cao, Lingpeng Kong, Qi~Liu, Tianyu Liu, and Zhifang Sui.
-\newblock {Large Language Models are not Fair Evaluators}.
-\newblock In \emph{Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)}, pages 9440--9450. Association for Computational Linguistics, 2024.
-\newblock \doi{10.18653/v1/2024.acl-long.511}.
-\newblock URL \url{https://aclanthology.org/2024.acl-long.511/}.
-
-\bibitem[Wang et~al.(2026)Wang, Ju, Zhang, Sun, Duan, Zheng, and Cai]{Wang2026ExecutionProvenance}
-Yiqi Wang, Jinqian Ju, Jiaqi Zhang, Zequn Sun, Yiqun Duan, Mingkai Zheng, and Taotao Cai.
-\newblock {EPGM: Execution Provenance for Budgeted Agent Memory Retrieval}, 2026.
-\newblock URL \url{https://arxiv.org/abs/2609.25913v2}.
-
 \bibitem[Wu et~al.(2025)Wu, Wang, Yu, Zhang, Chang, and Yu]{Wu2025LongMemEval}
 Di~Wu, Hongwei Wang, Wenhao Yu, Yuwei Zhang, Kai-Wei Chang, and Dong Yu.
 \newblock {LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory}.
 \newblock In \emph{International Conference on Learning Representations}, 2025.
 \newblock URL \url{https://arxiv.org/abs/2410.10813v2}.
 
-\bibitem[Xiao et~al.(2024)Xiao, Liu, Zhang, Muennighoff, Lian, and Nie]{Xiao2023CPack}
-Shitao Xiao, Zheng Liu, Peitian Zhang, Niklas Muennighoff, Defu Lian, and Jian-Yun Nie.
-\newblock {C-Pack: Packed Resources for General Chinese Embeddings}.
-\newblock In \emph{Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval}, pages 641--649. Association for Computing Machinery, 2024.
-\newblock \doi{10.1145/3626772.3657878}.
-\newblock URL \url{https://arxiv.org/abs/2309.07597v5}.
-
-\bibitem[Xion and Nejdl(2026)]{XionNejdl2026TrainingBias}
-William Xion and Wolfgang Nejdl.
-\newblock {Training-Induced Bias Toward LLM-Generated Content in Dense Retrieval}.
-\newblock In \emph{Advances in Information Retrieval: 48th European Conference on Information Retrieval, ECIR 2026, Part {I}}, {Lecture Notes in Computer Science}, pages 83--97, Cham, 2026. Springer Nature Switzerland.
-\newblock \doi{10.1007/978-3-032-21289-4_6}.
-\newblock URL \url{https://arxiv.org/abs/2602.10833v1}.
-
-\bibitem[Xu et~al.(2026)Xu, Yang, Wu, Zhang, Zhu, Li, Zhang, and Ji]{Xu2026RoutePrism}
-Dong Xu, Zhangfan Yang, Jiantao Wu, Shipeng Zhang, Zexuan Zhu, Jiangqiang Li, Jun Zhang, and Junkai Ji.
-\newblock {RoutePrism: Tracing Construction Order Effects in Agent Memory}, 2026.
-\newblock URL \url{https://arxiv.org/abs/2609.34160v1}.
-
-\bibitem[Xu et~al.(2022)Xu, Szlam, and Weston]{Xu2022Goldfish}
-Jing Xu, Arthur Szlam, and Jason Weston.
-\newblock {Beyond Goldfish Memory: Long-Term Open-Domain Conversation}.
-\newblock In \emph{Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)}, pages 5180--5197. Association for Computational Linguistics, 2022.
-\newblock \doi{10.18653/v1/2022.acl-long.356}.
-\newblock URL \url{https://aclanthology.org/2022.acl-long.356/}.
-
-\bibitem[Xu et~al.(2025)Xu, Liang, Mei, Gao, Tan, and Zhang]{Xu2025AMem}
-Wujiang Xu, Zujie Liang, Kai Mei, Hang Gao, Juntao Tan, and Yongfeng Zhang.
-\newblock {A-Mem: Agentic Memory for LLM Agents}.
-\newblock In \emph{Advances in Neural Information Processing Systems}, volume~38. Curran Associates, Inc., 2025.
-\newblock \doi{10.52202/085713-0593}.
-\newblock URL \url{https://proceedings.neurips.cc/paper_files/paper/2025/hash/19909c36f51abc4856b4560aff3d36d6-Abstract-Conference.html}.
-
 \bibitem[Yang(2026)]{Yang2026ForgetEval}
 Dongxu Yang.
 \newblock {Control-Plane Placement Shapes Forgetting: An Architectural Study of Agent Memory Across Thirteen System Configurations}, 2026.
 \newblock URL \url{https://arxiv.org/abs/2606.15903v2}.
-
-\bibitem[{Z.AI}(2026)]{ZaiGLM53FlashDocs}
-{Z.AI}.
-\newblock {GLM-5.3-Flash/FlashX}.
-\newblock Model documentation, 2026.
-\newblock URL \url{https://docs.z.ai/guides/vlm/glm-5.3-flash}.
-\newblock Accessed 2026-10-04.
-
-\bibitem[Zellers et~al.(2018)Zellers, Bisk, Schwartz, and Choi]{Zellers2018SWAG}
-Rowan Zellers, Yonatan Bisk, Roy Schwartz, and Yejin Choi.
-\newblock {SWAG: A Large-Scale Adversarial Dataset for Grounded Commonsense Inference}.
-\newblock In \emph{Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing}, pages 93--104, Brussels, Belgium, 2018. Association for Computational Linguistics.
-\newblock \doi{10.18653/v1/D18-1009}.
-\newblock URL \url{https://aclanthology.org/D18-1009/}.
-
-\bibitem[Zhang et~al.(2025)Zhang, Dai, Bo, Ma, Li, Chen, Zhu, Dong, and Wen]{Zhang2024MemorySurvey}
-Zeyu Zhang, Quanyu Dai, Xiaohe Bo, Chen Ma, Rui Li, Xu~Chen, Jieming Zhu, Zhenhua Dong, and Ji-Rong Wen.
-\newblock {A Survey on the Memory Mechanism of Large Language Model-based Agents}.
-\newblock \emph{ACM Transactions on Information Systems}, 43\penalty0 (6):\penalty0 155:1--155:47, 2025.
-\newblock \doi{10.1145/3748302}.
-\newblock URL \url{https://doi.org/10.1145/3748302}.
-
-\bibitem[Zhang et~al.(2026)Zhang, Tang, Dong, Li, Zhu, Li, Zhu, Lu, {Wang Jiaheng}, Wang, Zheng, and Du]{Zhang2026CausalNeg}
-Zhicheng Zhang, Jiwei Tang, Kuicai Dong, Xiaopeng Li, Jieming Zhu, Jingyu Li, Qianhui Zhu, Fengyuan Lu, {Wang Jiaheng}, Gang Wang, Hai-Tao Zheng, and Zhaocheng Du.
-\newblock {When Hard Negatives Hurt: Bridging the Generative-Discriminative Gap in Hard Negative Synthesis for Retrieval}.
-\newblock In \emph{Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining {V.2}}, pages 6688--6699. Association for Computing Machinery, 2026.
-\newblock \doi{10.1145/3770855.3818118}.
-\newblock URL \url{https://arxiv.org/abs/2606.01304v2}.
-
-\bibitem[Zhao et~al.(2026)Zhao, Hu, Wang, and Xiao]{Zhao2026LRBench}
-Xinyi Zhao, Haoqi Hu, Ziyu Wang, and Jinfeng Xiao.
-\newblock {LRBench and Judge-R1: Principled Evaluation and Training of LLM-Based Judges for Long-Context Reasoning}.
-\newblock In \emph{Findings of the Association for Computational Linguistics: ACL 2026}, pages 40839--40861. Association for Computational Linguistics, 2026.
-\newblock \doi{10.18653/v1/2026.findings-acl.2029}.
-\newblock URL \url{https://aclanthology.org/2026.findings-acl.2029/}.
 
 \bibitem[Zheng et~al.(2023)Zheng, Chiang, Sheng, Zhuang, Wu, Zhuang, Lin, Li, Li, Xing, Zhang, Gonzalez, and Stoica]{Zheng2023MTBench}
 Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi~Lin, Zhuohan Li, Dacheng Li, Eric~P. Xing, Hao Zhang, Joseph~E. Gonzalez, and Ion Stoica.
@@ -662,12 +220,5 @@ Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Z
 \newblock In \emph{Advances in Neural Information Processing Systems}, volume~36, pages 46595--46623. Curran Associates, Inc., 2023.
 \newblock \doi{10.52202/075280-2020}.
 \newblock URL \url{https://papers.neurips.cc/paper_files/paper/2023/hash/91f18a1287b398d378ef22505bf41832-Abstract-Datasets_and_Benchmarks.html}.
-
-\bibitem[Zhong et~al.(2024)Zhong, Guo, Gao, Ye, and Wang]{Zhong2024MemoryBank}
-Wanjun Zhong, Lianghong Guo, Qiqi Gao, He~Ye, and Yanlin Wang.
-\newblock {MemoryBank: Enhancing Large Language Models with Long-Term Memory}.
-\newblock In \emph{Proceedings of the AAAI Conference on Artificial Intelligence}, volume~38, pages 19724--19731. Association for the Advancement of Artificial Intelligence, 2024.
-\newblock \doi{10.1609/aaai.v38i17.29946}.
-\newblock URL \url{https://doi.org/10.1609/aaai.v38i17.29946}.
 
 \end{thebibliography}

@@ -1,4 +1,4 @@
-# Auditing Agent-Memory Benchmarks: Question-Blind Cues, Fair Nulls, and Replica Controls
+# Finding the Evidence Without the Question: Auditing Agent-Memory Benchmarks
 
 Özgür Uğurlu · October 2026
 

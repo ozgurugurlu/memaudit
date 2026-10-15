@@ -23,7 +23,7 @@ keywords:
   - reproducibility
 preferred-citation:
   type: report
-  title: "Auditing Agent-Memory Benchmarks: Question-Blind Cues, Fair Nulls, and Replica Controls"
+  title: "Finding the Evidence Without the Question: Auditing Agent-Memory Benchmarks"
   authors:
     - family-names: "Uğurlu"
       given-names: "Özgür"

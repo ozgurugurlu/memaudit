@@ -2,7 +2,7 @@
 
 # memaudit
 
-### Auditing Agent-Memory Benchmarks: Question-Blind Cues, Fair Nulls, and Replica Controls
+### Finding the Evidence Without the Question: Auditing Agent-Memory Benchmarks
 
 **Can a benchmark's evidence be found without the question? Audit it before you trust the score.**
 
@@ -28,25 +28,20 @@ repeated runs of one pipeline disagree.
 From the accompanying paper ([PDF](paper/memaudit-paper.pdf), [Markdown](paper/paper.md)):
 
 - **Evidence can be found without the question in some benchmarks.** On STALE, the character U+2019 marks all 800
-  evidence sessions and none of 19,200 distractors; one rule recovers both gold sessions in all 400 scenarios.
-  Question-blind classifiers reach a detectability AUROC of 1.000 on STALE and .995 on LoCoMo-Plus and are weaker
-  elsewhere. On BEAM, retrieval with another item's question is equivalent to chance under fair nulls (for our hybrid
-  retriever and unit definitions).
-- **The cue yields question-blind exact retrieval.** On STALE, a pointer that names the gold pair without reading the
-  question beats budget-matched two-session retrieval pointers by 13–21 LLM-judged accuracy points for four readers from
-  four vendors (preregistered, on a reused test split). This is the value of exact retrieval, not a cue-specific effect,
-  and those retrieval pointers trail a pointer-free instruction that reveals what the rubric rewards.
-- **Native reliance is not shown; a RAG pipeline scores equivalently with and without the cues.** In STALE's official layout,
-  removing typography and clock times together left a hybrid RAG pipeline's LLM-judged accuracy equivalent within ±3
-  points (+0.15 [−1.29, +1.60], Holm-adjusted; preregistered, on a reused population). A mem0 pipeline's test was
-  inconclusive (+4.30 [−0.21, +8.89]). Earlier, one reader stayed within ±5 points in a non-official layout, and
-  replacing STALE's distractors lowered retrieval recall but also added harder negatives; the earlier end-to-end
-  inflation tests are invalid.
-- **Item-level labels are unstable.** Two rebuilds of one memory pipeline disagree on 16% of LLM-judged labels on average,
-  while run-level accuracy varies by about 1 point, as averaging over the questions predicts.
+  evidence sessions and none of 19,200 distractors, so one rule recovers both evidence sessions in all 400 scenarios.
+  Question-blind classifiers reach an AUROC of 1.000 on STALE and .995 on LoCoMo-Plus and are weaker elsewhere. On BEAM,
+  retrieval with another item's question is equivalent to chance under fair nulls.
+- **The cue would pay if used.** Naming STALE's cue-identified pair improves judged accuracy by 13–21 points over notes
+  naming two retrieved sessions, for four readers from four vendors. Those comparator notes themselves score below a
+  generic instruction.
+- **The tested systems show no large benefit from the cues.** Removing typography and clock times together leaves a
+  plain reader, a hybrid RAG pipeline and a mem0 pipeline within their pre-specified practical bounds; the intervals
+  exclude a net benefit larger than about 3.8, 1.6 and 1.4 points.
+- **Item-level labels are unstable.** Rebuilds of one memory pipeline disagree on about 16% of judged labels, while
+  run-level accuracy varies by about one point.
 - **Scoring rules matter.** ForgetEval's public score can reward a policy that wipes memory.
 
-None of this shows that published scores are inflated; see the paper's limitations.
+We do not estimate inflation in published scores; see the paper's limitations.
 
 ## What memaudit does
 
@@ -240,7 +235,7 @@ make ci          # tests, hygiene scan, offline sdist/wheel build, wheel import,
 
 ```bibtex
 @misc{ugurlu2026memaudit,
-  title        = {Auditing Agent-Memory Benchmarks: Question-Blind Cues, Fair Nulls, and Replica Controls},
+  title        = {Finding the Evidence Without the Question: Auditing Agent-Memory Benchmarks},
   author       = {U{\u{g}}urlu, {\"O}zg{\"u}r},
   year         = {2026},
   howpublished = {\url{https://github.com/ozgurugurlu/memaudit}},
