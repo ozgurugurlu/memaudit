@@ -2,7 +2,7 @@
 
 Özgür Uğurlu
 
-This appendix gives the methods and aggregate results behind the four research questions. Table I1 maps descriptive study names to study codes. GLM abbreviates GLM-5.3-Flash.
+This appendix gives the methods and aggregate results behind the four audit steps. Table I1 maps descriptive study names to study codes. GLM abbreviates GLM-5.3-Flash.
 
 <a id="appendix-a"></a>
 

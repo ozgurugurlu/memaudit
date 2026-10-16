@@ -34,12 +34,12 @@ From the accompanying paper ([PDF](paper/memaudit-paper.pdf), [Markdown](paper/p
 - **The cue would pay if used.** Naming STALE's cue-identified pair improves judged accuracy by 13–21 points over notes
   naming two retrieved sessions, for four readers from four vendors. Those comparator notes themselves score below a
   generic instruction.
-- **The tested systems show no large benefit from the cues.** Removing typography and clock times together leaves a
-  plain reader, a hybrid RAG pipeline and a mem0 pipeline within their pre-specified practical bounds; the intervals
-  exclude a net benefit larger than about 3.8, 1.6 and 1.4 points.
 - **Item-level labels are unstable.** Rebuilds of one memory pipeline disagree on about 16% of judged labels, while
   run-level accuracy varies by about one point.
 - **Scoring rules matter.** ForgetEval's public score can reward a policy that wipes memory.
+- **The tested systems show no large benefit from the cues.** Removing typography and clock times together leaves a
+  plain reader, a hybrid RAG pipeline and a mem0 pipeline within their pre-specified practical bounds; the intervals
+  exclude a net benefit larger than about 3.8, 1.6 and 1.4 points.
 
 We do not estimate inflation in published scores; see the paper's limitations.
 

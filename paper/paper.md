@@ -4,7 +4,7 @@
 
 ## Abstract
 
-Agent-memory benchmarks are meant to test whether a system can find and use the right information in a long interaction history. If the way a benchmark is built leaves visible traces on its evidence, a system can locate that evidence without understanding the question, and the score may measure something other than memory. We audit eight agent-memory benchmarks for such traces and follow the clearest case from detection to effect. In STALE, a single character, the curly apostrophe, appears in every answer-bearing session and in none of the 19,200 distractors. LoCoMo-Plus evidence is almost perfectly separable by style, whereas in BEAM a retriever given unrelated questions finds evidence no more often than chance. The STALE shortcut is valuable: telling a reader which sessions it marks raises accuracy by 13–21 points over a note naming two retrieved sessions, for each of four reader models from different vendors. Yet the systems we tested do not measurably profit from it. Normalizing the typography and removing session clock times leaves the accuracy of a long-context reader, a retrieval-augmented pipeline and a mem0 pipeline nearly unchanged, with intervals that exclude benefits above about four points. Scores are also less stable than they look: rebuilding the same memory pipeline changes about 16% of item labels while overall accuracy has a standard deviation of about one point, and ForgetEval's scoring rule rewards a policy that wipes memory. A visible shortcut is therefore a risk to test, not proof of inflated scores. We release a checklist and memaudit, an open offline toolkit for these checks.
+Agent-memory benchmarks test whether a system can find and use the right information in a long conversation history. We show that several of these benchmarks contain construction and scoring flaws that can make their results misleading, and we propose an audit to detect such flaws. Applied to eight benchmarks, the audit finds that in STALE a single character, the curly apostrophe, marks every answer-bearing session and none of the 19,200 distractors; that LoCoMo-Plus evidence can be told apart from the surrounding conversation by writing style alone; that rebuilding the same memory pipeline changes about 16% of item labels while overall accuracy varies by only about one point; and that ForgetEval's scoring rule rewards a policy that wipes memory. BEAM passes the audit. The STALE shortcut is valuable: telling a reader which sessions it marks raises accuracy by 13–21 points, although removing it together with session clock times changes the accuracy of the three systems we tested by at most a few points. We release the audit as a checklist and an open offline toolkit, memaudit.
 
 <a id="main-1"></a>
 
@@ -16,32 +16,30 @@ This matters because agent-memory benchmarks are intended to measure useful reca
 
 For example, suppose an early session says the user is vegetarian, a later one mentions their new favorite meal of beef steak, and 48 unrelated sessions surround them; a question then asks what meal to recommend now. A short note could name the earlier and later sessions for a reader that sees the whole history. The answer should follow the later steak preference; a note naming both sessions makes the update easy to find.
 
-We follow the cue from evidence detection to reader benefit, accuracy under cue removal and measurement stability. Figure 1 gives the logic of these four questions.
+We propose a four-step audit for agent-memory benchmarks. Step 1 asks whether evidence can be found without the question. Step 2 measures how much that shortcut would be worth. Step 3 tests whether the systems' scores depend on it. Step 4 checks whether the measurement itself can support comparisons, through repeated pipeline builds and tests of the scoring rule. Figure 1 outlines the protocol.
 
-Changing labels between rebuilds of an unchanged system can obscure small cue effects and system comparisons more generally, so we also ask whether the measurement can support such comparisons.
+![Overview: four steps of the benchmark audit](figures/fig0-question-chain.png)
 
-![Overview: four questions about benchmark scores](figures/fig0-question-chain.png)
+**Figure 1. The audit's four steps.** Step 1 looks for question-blind evidence cues. Step 2 measures the value of the evidence they identify. Step 3 removes the cues to test score dependence. Step 4 checks replica stability and scoring incentives. Each step needs its own comparison.
 
-**Figure 1. Four questions, with different evidence for each.** A question-blind cue can identify relevant evidence. A pointer experiment asks how much that evidence would help a reader. Removing the cues asks whether tested systems benefit from them in ordinary use. Replica and scoring-rule checks examine how the resulting labels and scores should be interpreted. Each step has its own comparison.
+**The audit at a glance.**
 
-**Four questions at a glance.**
-
-| Question | Short answer | Key number |
+| Step | What it found | Key number |
 |---|---|---|
-| Evidence without the question? | STALE reveals evidence; BEAM matches fair nulls. | STALE: one character |
-| Would the cue help? | Yes, versus retrieved-session notes. | +13–21 points; four readers |
-| Do systems benefit? | Joint-removal intervals bound net benefits. | Upper bounds: reader ≈3.8, RAG ≈1.6, mem0 extension ≈1.4 points |
-| Is measurement stable? | Labels change; forgetting scores can reward wiping. | ≈16% label disagreement; ≈1-point accuracy standard deviation |
+| 1. Find evidence without the question | STALE reveals evidence; LoCoMo-Plus evidence is separable by style; BEAM matches fair nulls. | STALE: one character |
+| 2. Measure shortcut value | Naming STALE's evidence beats matched retrieval notes. | +13–21 points; four readers |
+| 3. Test score dependence | Joint removal bounds net benefits in the tested systems. | Upper bounds: reader ≈3.8, RAG ≈1.6, mem0 extension ≈1.4 points |
+| 4. Check measurement | Replica labels change; ForgetEval rewards wiping memory. | ≈16% disagreement; ≈1-point accuracy standard deviation |
 
-The central finding is a gap between an available shortcut and a demonstrated benefit from ordinary use. STALE's evidence is conspicuously marked, and exact retrieval has value. Joint cue removal nevertheless bounds the net accuracy benefit in the tested systems. Together, these findings connect benchmark construction to measured system behavior.
+The audit finds construction flaws that reveal evidence, changing replica labels and a scoring rule that rewards wiping memory. It also identifies a passing case: BEAM's wrong-question retrieval matches fair nulls. In STALE, the shortcut is both present and valuable, yet the tested systems show no large benefit from it. That result is why the audit includes an impact step: a visible construction flaw alone does not establish score inflation.
 
-We make three contributions. First, we combine a question-blind evidence audit with an atlas of retrieval under unrelated questions and fair null baselines. Second, we connect those diagnostics to reader controls, cue-removal experiments, replica checks and scoring-rule tests. Third, we turn the checks into a short benchmark-building checklist and an offline toolkit, memaudit. Appendix I gives the study map and validation summary.
+We contribute (1) an audit protocol with fair baselines and controls; (2) findings on STALE, LoCoMo-Plus, ForgetEval and replica label instability, including a shortcut created by our own HaluMem adaptation and a passing case in BEAM; (3) an impact check on STALE; and (4) a benchmark-building checklist and the offline toolkit memaudit. Appendix I gives the study map and validation summary.
 
 <a id="main-2"></a>
 
 ## 2. Related work
 
-Question-blind auditing extends established tests of whether a benchmark can be solved from incomplete inputs. Hypothesis-only natural-language inference and question-only reading-comprehension baselines exposed annotation artifacts [@Gururangan2018AnnotationArtifacts; @Poliak2018HypothesisOnly; @KaushikLipton2018ReadingComprehension]. Shortcut-learning studies explain why a successful predictor need not learn the intended task [@Geirhos2020ShortcutLearning], while failed partial-input baselines do not certify artifact-free data [@Feng2019Misleading]. Adversarial distractors and contrast sets motivate interventions that change a suspected shortcut [@JiangBansal2019Shortcuts; @Gardner2020ContrastSets]. Our contribution is to connect evidence detectability, the value of exact retrieval, and accuracy under cue removal without equating them.
+Question-blind auditing extends established tests of whether a benchmark can be solved from incomplete inputs. Hypothesis-only natural-language inference and question-only reading-comprehension baselines exposed annotation artifacts [@Gururangan2018AnnotationArtifacts; @Poliak2018HypothesisOnly; @KaushikLipton2018ReadingComprehension]. Shortcut-learning studies explain why a successful predictor need not learn the intended task [@Geirhos2020ShortcutLearning], while failed partial-input baselines do not certify artifact-free data [@Feng2019Misleading]. Adversarial distractors and contrast sets motivate interventions that change a suspected shortcut [@JiangBansal2019Shortcuts; @Gardner2020ContrastSets]. Our audit protocol connects evidence detection, the value of exact retrieval, score dependence and measurement checks, with a separate comparison for each step.
 
 Long-history benchmarks include LoCoMo, LongMemEval and STALE [@Maharana2024LoCoMo; @Wu2025LongMemEval; @Chao2026STALE]. They evaluate systems that compress, retrieve or update conversational memory, including Mem0 [@Chhikara2025Mem0]. Reader behavior also depends on evidence position, distracting context and presentation [@Liu2024LostMiddle; @Shi2023Distracted; @Sclar2024Spurious]. Concurrent work tests memory-size leakage and query-conditioned presentation controls [@Mondal2026BeforeAnswering; @Jiang2026Presentation; @Si2026Render]. We instead begin with question-blind evidence labels and use benchmark-specific nulls before testing downstream behavior. Query-independent document advantages already have a long history in information retrieval [@Singhal1996Pivoted; @Kraaij2002Priors].
 
@@ -49,9 +47,9 @@ LLM judges can disagree with humans, prefer particular outputs, and respond to p
 
 <a id="main-3"></a>
 
-## 3. Setup: each question needs a different comparison
+## 3. Setup: each audit step needs its own comparison
 
-We measure evidence detectability, retrieval value, ordinary-use accuracy and measurement stability separately. A session is a conversation segment; a turn is one message. The unit being ranked can be a session or a turn, depending on the benchmark. A candidate pool is the set of units available for a particular item. Table 1 summarizes the audited settings.
+The audit separates evidence detectability, shortcut value, score dependence and measurement reliability. A session is a conversation segment; a turn is one message. The unit being ranked can be a session or a turn, depending on the benchmark. A candidate pool is the set of units available for a particular item. Table 1 summarizes the audited settings.
 
 **Table 1. Benchmark coverage.** This table covers eight benchmarks in all. Seven appear in the evidence audit, which has nine settings because BEAM has three scales. MemOps appears in the atlas only; the atlas replaces PersonaMem-v2 with MemOps. These are selected settings with tractable adapters, not a prevalence sample. Construction summaries, populations and adapters are in Appendices A, E and K.
 
@@ -78,7 +76,7 @@ We measure evidence detectability, retrieval value, ordinary-use accuracy and me
 
 <a id="main-4"></a>
 
-## 4. Q1: some benchmarks reveal the evidence without the question
+## 4. Step 1: some benchmarks reveal the evidence without the question
 
 STALE and LoCoMo-Plus strongly separate evidence from distractors, while BEAM's wrong-question retrieval is equivalent to fair chance. The two findings come from different tests: the first identifies evidence features; the second asks whether unrelated questions retrieve evidence beyond a suitable baseline.
 
@@ -96,7 +94,7 @@ The atlas asks a stricter question about retrieval. In BEAM, unrelated questions
 
 Fair nulls also change LongMemEval-S's interpretation. Its wrong-question hit rate exceeds uniform chance, but weighting units by turn count accounts for much of the excess. A naive uniform baseline would attribute a mechanical opportunity advantage to something more distinctive.
 
-Our HaluMem adaptation illustrates a failure of the audit itself. The pre-specified candidate histories ended at the later of the question's session and the latest evidence session. That rule often put evidence at the end, creating a positional shortcut. The prefix result reflects this adaptation choice. A descriptive check on full histories of the same items removes the cue-dominance flag and places retrieval near its fair null. Appendix E preserves both results.
+The audit also catches a positional shortcut created by our own HaluMem adaptation. The pre-specified candidate histories ended at the later of the question's session and the latest evidence session. That rule often put evidence at the end, creating a positional shortcut. The prefix result reflects this adaptation choice. A descriptive check on full histories of the same items removes the cue-dominance flag and places retrieval near its fair null. Appendix E preserves both results.
 
 **Table 2. Selected atlas comparisons.** Rates are percentages for any evidence in the top five. CE is chance-corrected excess over the turn-weighted null. BEAM's rates are item-weighted while its CE weights scales equally; CE is calculated per item, so it cannot in general be reconstructed from the displayed mean rates. The BEAM comparisons meet a ±.03 equivalence bound with Holm adjustment; the remaining rows use descriptive 95% intervals. Appendix E gives the atlas methods and support checks.
 
@@ -115,7 +113,7 @@ These results describe evidence detectability and retrieval in the audited setti
 
 <a id="main-5"></a>
 
-## 5. Q2: the cue-identified pair is valuable to readers
+## 5. Step 2: the STALE shortcut would be valuable
 
 Giving readers STALE's cue-identified evidence improves judged accuracy by 13–21 points over matched two-session retrieval pointers. The reader already receives the full history. What changes is a note telling it which sessions to consult.
 
@@ -139,13 +137,9 @@ The reader premium applies to STALE and the matched retrieval-pointer comparison
 
 <a id="main-6"></a>
 
-## 6. Q3: joint removal bounds net benefits in three tested settings
+## 6. Step 3: the tested systems show no large benefit from the cues
 
-For the plain reader, RAG and mem0 extension, the decision intervals exclude a net benefit from the two cues larger than about 3.8, 1.6 and 1.4 percentage points, respectively (Table 3). The cue-removal experiments compare each system on STALE as distributed with the same input after typography is normalized and session clock times are removed while dates remain. These upper bounds and the 13–21-point pointer premium answer different questions: changing the input cues is different from telling the reader where the evidence is.
-
-These studies removed the two cues together; separate removal, as recommended in checklist item 3, remains future work.
-
-Unlike the pointer experiment, these systems receive no hint about where the evidence is. The plain-reader comparison uses a non-official user-only layout, retaining user messages in our session template; official layout means STALE's own session-and-role formatting. The pipeline comparisons use that official layout: a hybrid retrieval-augmented generation pipeline reads retrieved sessions, while the mem0 pipeline reads memories built separately for each condition. Both pipelines use GLM-5.3-Flash. The mem0 system uses version 2.2.1 with user-only ingestion [@Mem0Library]. Grading prompts and gold text are identical across pipeline conditions.
+A cue can be present and valuable without changing a system's score. This step tests impact by comparing STALE as distributed with the same input after typography is normalized and session clock times are removed, retaining dates. For the plain reader, RAG and mem0 extension, the decision intervals exclude net benefits above about 3.8, 1.6 and 1.4 percentage points, respectively (Table 3). The 13–21-point pointer premium instead measures the value of telling readers where the evidence is.
 
 **Table 3. Accuracy with the cues minus accuracy after joint removal.** Effects and intervals are percentage points. The reader interval is a 95% scenario bootstrap; RAG and the first mem0 subset use their Holm-level decision intervals; the mem0 extension uses the wider of its unadjusted 95% bootstrap and t intervals. The plain reader uses interval inclusion; the pipelines use two one-sided tests (TOST) against the stated bounds. Counts are usable scenarios. The mem0 extension was run on the complementary scenarios after the first subset's inconclusive result. A descriptive pool of 398 scenarios gives +0.71 [−1.62, +3.06]. Appendices B.3 and L give the analyses.
 
@@ -156,15 +150,17 @@ Unlike the pointer experiment, these systems receive no hint about where the evi
 | mem0 2.2.1, first subset | 150 | +4.30 [−0.21, +8.89] | ±5 | Inconclusive |
 | mem0 2.2.1, extension | 248 | −1.46 [−4.33, +1.42] | ±5 | Equivalent |
 
-The RAG result meets its pre-specified practical bound. The first mem0 subset remains inconclusive; the extension on complementary scenarios meets ±5 points, with an interval extending beyond ±3 points. Appendix L gives the subset and pooled estimates.
+The plain reader uses a non-official user-only session template; RAG and mem0 use STALE's official session-and-role layout. Hybrid retrieval-augmented generation (RAG) reads retrieved sessions; mem0 reads memories built separately for each condition, using version 2.2.1 and user-only ingestion [@Mem0Library]. Both pipelines use GLM-5.3-Flash and identical grading prompts and gold text across conditions.
 
-These results bound the net effect of removing typography and clock times together in the tested layouts. Accuracy could remain stable despite cue use, or the effects of the two changes could offset one another. Two end-to-end tests that replaced STALE's distractors were invalid, because judge failures left too many answers ungraded; they give no estimate (Appendix D).
+The first mem0 subset remains inconclusive; the extension meets ±5 points, with an interval extending beyond ±3 points (Appendix L).
+
+These results bound the net effect of jointly removing two cues in the tested layouts; separate removal remains future work, and opposing effects could cancel. Two end-to-end tests that replaced STALE's distractors were invalid, because judge failures left too many answers ungraded; they give no estimate (Appendix D).
 
 <a id="main-7"></a>
 
-## 7. Q4: stable totals can hide changing labels and flawed incentives
+## 7. Step 4: stable totals can hide changing labels and flawed incentives
 
-If labels change between rebuilds of an unchanged system, small cue effects and system comparisons generally become harder to detect from item labels; Q4 asks whether the measurement can support these comparisons. Rebuilding the same memory pipeline changes many item labels while leaving overall accuracy comparatively stable. Separately, a forgetting score can reward deleting useful memory. These are distinct reasons to inspect what a headline score aggregates.
+Step 4 asks whether the measurement can support system comparisons. Rebuilding the same memory pipeline changes many item labels while leaving overall accuracy comparatively stable. Separately, a forgetting score can reward deleting useful memory. These are distinct reasons to inspect what a headline score aggregates.
 
 ### Replica labels change more than aggregate accuracy
 
@@ -218,7 +214,7 @@ Several experiments reuse populations. The practical margins define the toleranc
 
 ## 10. Conclusion
 
-STALE contains an exact question-blind evidence cue, and supplying the identified evidence helps readers. Joint removal bounds net accuracy benefits for the plain reader, RAG and mem0 extension within their pre-specified practical margins. Replica checks and null memory policies expose further ways a headline score can hide item instability or reward unintended behavior. Benchmark builders should test each of these links. The checklist and memaudit make several of the checks inexpensive to run.
+The proposed audit finds construction cues in STALE and LoCoMo-Plus, a positional shortcut introduced by our own HaluMem adaptation, unstable replica labels and a flawed forgetting incentive, while BEAM passes the wrong-question retrieval check against fair nulls. The protocol, checklist and memaudit let benchmark builders look for these problems before interpreting system scores. STALE also shows why the audit needs an impact step: its shortcut is present and valuable, yet the tested systems show no large benefit from it. A shortcut's presence and value do not by themselves establish score inflation, so impact should be tested directly.
 
 <a id="main-release"></a>
 
